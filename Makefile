@@ -7,4 +7,4 @@ install:
 	install ./mosts $(MAIN_BIN)
 
 uninstall:
-	rm -f $(MAIN_BIN)/bascit
+	rm -f $(MAIN_BIN)/mosts
