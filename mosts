@@ -1,0 +1,42 @@
+#!/bin/bash
+
+HOSTS_PATH=/cygdrive/c/Windows/System32/drivers/etc/hosts
+
+#Utility variables declaration
+sw1=$1
+sw2=$2
+
+
+function change_hosts {
+	cp $HOSTS_PATH ~/.hostsT/hosts
+	cp ~/.hostsT/hosts$1 $HOSTS_PATH
+}
+
+function show_hosts {
+	cat $HOSTS_PATH
+}
+
+
+function helpme {
+		echo "     mosts - Manager of the hOsts"
+		echo " OPTIONS:"
+		echo " show(s)|change(c) 3-4-5"
+		echo "ips: new .5 old .3"
+}
+
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied"
+	helpme
+	exit 1
+fi
+
+
+case "$sw1" in
+	show|s) show_hosts
+        	;;
+        change|c) change_hosts $sw2
+		;;
+	*) helpme 
+		;;
+esac
