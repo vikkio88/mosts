@@ -13,7 +13,14 @@ To show current hosts file:
 ```
  $ mosts s(show)
 ```
-## Linux
+### Install
+to install this small script:
+```
+ $ cd mosts
+ $ make
+ $ make install
+```
+### Linux
 to make it work on linux just change the constant in the head with:
 ```
 /etc/hosts
